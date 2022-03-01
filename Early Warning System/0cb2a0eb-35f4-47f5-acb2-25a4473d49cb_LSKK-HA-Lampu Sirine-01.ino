@@ -15,8 +15,8 @@
 const char* ssid = "LSKKHomeauto"; //ssid/nama wifi  
 const char* password = "1234567890"; //password wifi
 const char* mqtt_server = "192.168.0.2"; //server mqtt
-const char* mqtt_user = "/homeauto:homeauto"; //user mqtt
-const char* mqtt_pass = "homeauto12345!"; //password mqtt
+const char* mqtt_user = "/smarthome:smarthome"; //user mqtt
+const char* mqtt_pass = "smarthome12345!"; //password mqtt
 const char* CL = "LSKK-HA-AKTUATOR-SECURITY"; //nama alat
 const char* mqtt_pub_topic = "status"; //topik dari data input
 const char* output_name = "ALARM";
@@ -28,7 +28,7 @@ int relay1 = D1 ;
 //5885f13d-c8c5-47a9-9c30-1f606fb83169 | Lampu tengah | Punclut | A0:20:A6:1B:B5: E
 //813b8f84-5e92-462a-a51a-c8e3c017ff28 | Lampu atas | Punclut | 5C:CF:7F:F7:5E:A7
 
-const char* device_guid = "b0e272d9-1472-4640-a5e1-b435abfb2c3c";// masukkan guuid/serial_number
+const char* device_guid = "0cb2a0eb-35f4-47f5-acb2-25a4473d49cb";// masukkan guuid/serial_number
 String output_value;
 
 char msg[100];
@@ -111,13 +111,6 @@ void callback(char* topic, byte* payload, unsigned int length) {
     statusDevice= "0";
     
   }
-
-
-  Serial.print("Publish message: ");
-  String pubmsg = String(device_guid) + "#" + output_name + "#"+ String(statusDevice) ;
-  Serial.println(pubmsg);
-  client.publish(mqtt_pub_topic, pubmsg.c_str());
-  delay(50);
 }
 
 void reconnect() {
@@ -147,7 +140,7 @@ void setup()
 {
   pinMode(D1, OUTPUT);
 
-  digitalWrite(D1, HIGH);
+  digitalWrite(D1, LOW);
 
   //pinMode(input, INPUT);
   Serial.begin(115200);
