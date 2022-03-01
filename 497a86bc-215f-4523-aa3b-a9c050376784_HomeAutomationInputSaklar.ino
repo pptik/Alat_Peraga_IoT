@@ -13,18 +13,18 @@
 const char* ssid = "LSKKHomeauto";//
 const char* password = "1234567890";
 const char* mqtt_server = "192.168.0.2";//ip server
-const char* mqtt_user = "/Homeauto:homeauto";
-const char* mqtt_pass = "homeauto12345!";
+const char* mqtt_user = "/smarthome:smarthome";
+const char* mqtt_pass = "smarthome12345!";
 const char* mqtt_pub_topic = "Sensor";//publish topic pada mqtt
 const char* CL = "LSKK-HA-";//nama alat
 int loop_count  = 0 ; //loop count loop
 
-String statusDevice [4] = {"1","1","1","1"};
+String statusDevice [3] = {"1","1","1"};
 
 const int input1 = D1;
 const int input2 = D2;
 const int input2 = D3;
-const int input2 = D4;
+
 
 
 
@@ -120,7 +120,6 @@ void setup()
   pinMode(input1, INPUT_PULLUP);
   pinMode(input2, INPUT_PULLUP);
   pinMode(input3, INPUT_PULLUP);
-  pinMode(input4, INPUT_PULLUP);
 
 
   setup_wifi();
@@ -134,7 +133,7 @@ String button_status[4];
 String prevpubmsg = "";
 void loop() {
   String pubmsg = "";
-  String input_guid = "2bf0c806-eebb-467c-9a47-cff1ded5263c";//guid id perangkat
+  String input_guid = "497a86bc-215f-4523-aa3b-a9c050376784";//guid id perangkat
   for (int i = 0; i <= loop_count; i++) {
     if (!client.connected()) {
       reconnect();
@@ -161,13 +160,11 @@ void loop() {
   if(instate3==LOW) button_status[2]="0";
   else button_status[2]="1";
 
-  int instate4 = digitalRead(input4);
-  if(instate4==LOW) button_status[3]="0";
-  else button_status[3]="1";
+
   
 
   
-  pubmsg = input_guid + "#" + button_status[0] + button_status[1]+ button_status[2]+ button_status[3];
+  pubmsg = input_guid + "#" + button_status[0] + button_status[1]+ button_status[2];
   //Kirim
   if(pubmsg != prevpubmsg) {
     client.publish(mqtt_pub_topic, pubmsg.c_str());
