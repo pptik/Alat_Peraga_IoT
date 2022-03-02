@@ -17,7 +17,7 @@ const char* mqtt_user = "/smarthome:smarthome";
 const char* mqtt_pass = "smarthome12345!";
 const char* mqtt_pub_topic = "SecuritySensor";//publish pada mqtt
 const char* CL = "LSKK-HA-SAKLAR-SECURITY";
-String input_name = "BL_BUTTON"; 
+String input_name = "BL_SAKLAR"; 
 int loop_count  = 0 ; //loop count loop
 
 String statusDevice = "1";
