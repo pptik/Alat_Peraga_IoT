@@ -130,7 +130,7 @@ String button_status;
 String prevpubmsg = "";
 void loop() {
   String pubmsg = "";
-  String input_guid = "c9c1127b-348c-481d-876e-3d4af9425f78";
+  String input_guid = "de7962af-16f1-405a-92af-6a7da26a917b";
   for (int i = 0; i <= loop_count; i++) {
     if (!client.connected()) {
       reconnect();
