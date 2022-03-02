@@ -12,7 +12,7 @@
 
 const char* ssid = "LSKKHomeauto";
 const char* password = "1234567890";
-const char* mqtt_server = "192.168.4.2";
+const char* mqtt_server = "192.168.0.2";
 const char* mqtt_user = "/smarthome:smarthome";
 const char* mqtt_pass = "smarthome12345!";
 const char* mqtt_pub_topic = "SecuritySensor";//publish pada mqtt
