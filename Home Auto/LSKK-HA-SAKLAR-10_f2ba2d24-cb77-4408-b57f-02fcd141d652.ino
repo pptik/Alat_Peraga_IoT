@@ -16,7 +16,7 @@ const char* mqtt_server = "192.168.0.2";//ip server
 const char* mqtt_user = "/smarthome:smarthome";
 const char* mqtt_pass = "smarthome12345!";
 const char* mqtt_pub_topic = "Sensor";//publish topic pada mqtt
-const char* CL = "LSKK-HA-";//nama alat
+// const char* CL = "LSKK-HA-";//nama alat
 int loop_count  = 0 ; //loop count loop
 
 String statusDevice = "1";
