@@ -18,6 +18,6 @@ npm run start
 
 ## 🤝 Contributing
 
-Kontribusi, isu/masalah, dan penambahan fitur-fitur baru dipersilahkan<br />Silahkan cek [halaman issues](https://github.com/pptik/jurnal-amari-worker/issues).
+Kontribusi, isu/masalah, dan penambahan fitur-fitur baru dipersilahkan<br />Silahkan cek [halaman issues](https://github.com/pptik/Alat_Peraga_IoT/issues).
 
 
