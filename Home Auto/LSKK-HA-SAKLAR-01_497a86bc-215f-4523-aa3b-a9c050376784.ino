@@ -23,7 +23,7 @@ String statusDevice [3] = {"1","1","1"};
 
 const int input1 = D1;
 const int input2 = D2;
-const int input3 = D3;
+const int input3 = D7;
 
 
 
